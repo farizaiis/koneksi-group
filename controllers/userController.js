@@ -236,7 +236,6 @@ module.exports = {
             return res.status(200).json({
                 status: 'success',
                 message: 'Success deleted the data',
-                data: findData,
             });
         } catch (error) {
             return res.status(500).json({
