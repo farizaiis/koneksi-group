@@ -1,5 +1,5 @@
-const { user } = require('../models');
 const Joi = require('joi');
+const { user } = require('../models');
 
 module.exports = {
     register: async (req, res) => {
@@ -40,14 +40,15 @@ module.exports = {
                 });
             }
 
-            await user.create({
-                name,
-                age,
+            const createUser = await user.create({
+                name: body.name,
+                age: body.age,
             });
 
             return res.status(200).json({
                 status: 'success',
                 message: 'Successfully registered a new user',
+                data: createUser,
             });
         } catch (error) {
             return res.status(500).json({
@@ -60,7 +61,7 @@ module.exports = {
     getAll: async (req, res) => {
         try {
             const findData = await user.findAll({
-                attributes: { exclude: [age, updateAt] },
+                attributes: { exclude: ['age', 'updatedAt'] },
             });
 
             const checkData = await user.findAndCountAll();
