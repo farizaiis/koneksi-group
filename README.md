@@ -3,6 +3,7 @@
 
 #### HOW TO RUN IN LOCAL
 - After clone this repo run npm install
+- Set database at .env file
 - For create database ---> npx sequelize db:create  
 - For migrate database ---> npx sequelize db:migrate
 
