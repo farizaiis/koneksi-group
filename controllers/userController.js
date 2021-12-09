@@ -119,8 +119,8 @@ module.exports = {
         const body = req.body;
         try {
             const schema = Joi.object({
-                name: Joi.string().required(),
-                age: Joi.number().required().min(1).max(100),
+                name: Joi.string(),
+                age: Joi.number().min(1).max(100),
             });
 
             const check = schema.validate(
