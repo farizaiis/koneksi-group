@@ -1,6 +1,8 @@
 
 # Koneksi Group Test
 
+Documentation Link : https://documenter.getpostman.com/view/17384187/UVJkCZPo
+
 #### HOW TO RUN IN LOCAL
 - After clone this repo run npm install
 - Set database at .env file
